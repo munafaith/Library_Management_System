@@ -1,6 +1,7 @@
 from rest_framework import serializers
-from .models import Book
+from .models import Book, Loan
 from django.contrib.auth.models import User
+
 
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,3 +23,8 @@ class UserSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         return user        
+    
+class LoanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Loan
+        fields = '__all__'
