@@ -1,6 +1,8 @@
 from rest_framework import generics
 from .models import Book
 from .serializers import BookSerializer
+from django.contrib.auth.models import User
+from .serializers import UserSerializer
 
 # This view handles listing all books and creating a new book
 class BookListCreateView(generics.ListCreateAPIView):
@@ -11,3 +13,11 @@ class BookListCreateView(generics.ListCreateAPIView):
 class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
+
+class UserListCreateView(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
