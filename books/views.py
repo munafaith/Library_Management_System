@@ -1,12 +1,12 @@
+from django.shortcuts import render
 from rest_framework import generics, status, filters
-from .models import Book, Loan
-from .serializers import BookSerializer, UserSerializer, LoanSerializer
-from django.contrib.auth.models import User
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-import datetime
 from django_filters.rest_framework import DjangoFilterBackend
+from .models import Book, Loan
+from .serializers import BookSerializer, LoanSerializer
+import datetime
 
 # This view handles listing all books and creating a new book
 class BookListCreateView(generics.ListCreateAPIView):
@@ -21,13 +21,7 @@ class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
 
-class UserListCreateView(generics.ListCreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
-class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
 
 class CheckoutBookView(APIView):
     permission_classes = [IsAuthenticated] # Ensures only logged-in users can access this view
