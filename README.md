@@ -1,6 +1,6 @@
 # Library Management System API
 
-This is the capstone project for the ALX Software Engineering program. It is a comprehensive REST API built with Django and Django REST Framework that provides backend services for a library management application.
+This is the capstone project for the ALX Back-End Web Development program. It is a comprehensive REST API built with Django and Django REST Framework that provides backend services for a library management application.
 
 ## Project Overview
 
