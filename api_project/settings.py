@@ -138,3 +138,4 @@ REST_FRAMEWORK = {
 
 LOGIN_URL = 'rest_framework:login'
 LOGOUT_URL = 'rest_framework:logout'
+LOGIN_REDIRECT_URL = '/api/books/'
